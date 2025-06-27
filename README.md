@@ -35,7 +35,7 @@
 - [MongoDB + Mongoose](https://mongoosejs.com/)
 - [Tailwind CSS](https://tailwindcss.com)
 - [JWT](https://jwt.io)
-- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js)
+- [Bcrypt](https://www.npmjs.com/package/bcryptjs)
 
 ---
 
