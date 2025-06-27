@@ -64,7 +64,7 @@ JWT_SECRET=your_jwt_secret
 
 `npm run dev`
 
-📌 Roadmap / TODOs
+## 📌 Roadmap / TODOs
 
     ✅ Guest rate limiting (3 attempts)
 
