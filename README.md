@@ -18,13 +18,15 @@
 
 ## 📁 Project Structure
 
-- app/ # App Router pages and layouts
-- components/ # Reusable UI components
-- lib/ # Use cases and business logic
-- models/ # MongoDB models
-- interfaces/ # Repositories and external service contracts
-- entities/ # Core domain entities
-- services/ # API calls from frontend
+```ts
+ app/         // App Router pages and layouts
+ components/  // Reusable UI components
+ lib/         // Use cases and business logic
+ models/      // MongoDB models
+ interfaces/  // Repositories and external service contracts
+ entities/    // Core domain entities
+ services/    // API calls from frontend
+```
 
 ---
 
