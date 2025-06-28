@@ -6,7 +6,6 @@ import IngredientInput from "@/components/IngredientInput";
 import MealForm from "@/components/MealForm";
 import MealSuggestion from "@/components/MealSuggestion";
 import { suggestMeal } from "../services/mealService";
-import { set } from "mongoose";
 
 function MealBuilder() {
   const [suggestion, setSuggestion] = useState<Meal>([]);

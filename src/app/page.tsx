@@ -5,8 +5,8 @@ import Link from "next/link";
 
 function Homepage() {
   return (
-    <section className="relative w-full min-h-screen overflow-hidden">
-      <div className="absolute inset-0 ">
+    <section className="w-full h-full bg-zinc-100">
+      {/* <div className="absolute inset-0 ">
         <Image
           src="/background.jpg"
           alt="Background Image"
@@ -15,7 +15,7 @@ function Homepage() {
           priority
         />
         <div className="absolute inset-0 bg-white/40" />
-      </div>
+      </div> */}
 
       <nav className="relative w-full ">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4 ">
@@ -26,7 +26,7 @@ function Homepage() {
               height={80}
               alt="RecipeAid Logo"
             />
-            <span className="text-4xl font-bold">RecipeAid</span>
+            <div className="text-4xl font-bold"><span className="text-green-600">Recipe</span>Aid</div>
           </div>
           <div className="hidden md:flex gap-6 text-xl font-medium">
             <a href="/mealbuilder" className="hover:text-green-600">
@@ -54,7 +54,7 @@ function Homepage() {
       <div className="grid grid-cols-1 md:grid-cols-2 max-w-6xl mx-auto px-6 py-20 gap-10 items-center">
         <div className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-            Cook Smarter with <span className="text-green-600">RecipeAid</span>
+            Cook Smarter with <span className="text-green-600">AI</span>
           </h1>
           <p className="text-lg text-gray-800  mb-6">
             Just type in what is in your kitchen - we will turn it into a tasty,
@@ -80,6 +80,7 @@ function Homepage() {
 
         {/* Image Side */}
         <div className="flex justify-center">
+          <div className="bg-red-500 ">
           <Image
             src="/sideimage.png"
             width={400}
@@ -88,6 +89,7 @@ function Homepage() {
             className="w-64 md:w-80 lg:w-[400px] xl:w-[500px] rounded-full drop-shadow-2xl object-cover"
             priority
           />
+          </div>
         </div>
       </div>
     </section>
