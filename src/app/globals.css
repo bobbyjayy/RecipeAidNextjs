@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+    --color-lionsmane: #fcf3e3;
+    --color-herb: #708c69;
+    --color-marigold: #f4a258;
+    --color-celeste: #bdd3ce;
+    --color-midnight: #013d5a;
+}
+
 html, body {
     height: 100%;
+    /* overflow: hidden; */
 }

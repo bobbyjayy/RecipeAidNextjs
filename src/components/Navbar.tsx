@@ -20,23 +20,20 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white shadow-md p-4 flex justify-between items-center">
+    <div className="bg-zinc-50 shadow-md p-4 flex justify-between items-center">
       <Link href="/" className="flex items-center text-xl font-bold">
         <Image
           src="/recipelogo.png"
           height={80}
           width={80}
           alt="recipeaid logo"
-          className="w-11 h-11 mr-2"
+          className="w-10 h-10 mr-2"
         />
-        RecipeAid
+        <span className="text-herb">Recipe</span>Aid
       </Link>
 
       <div className="flex items-center gap-4">
-        <Link
-          href="/mealbuilder"
-          className="text-gray-700 hover:text-indigo-600"
-        >
+        <Link href="/mealbuilder" className="text-gray-700 hover:text-marigold">
           Meal Builder
         </Link>
 
@@ -50,7 +47,7 @@ export default function Navbar() {
         ) : (
           <Link
             href="/login"
-            className="text-white bg-green-500 hover:bg-green-600 px-4 py-2 rounded-md"
+            className="text-green-50 bg-herb hover:bg-herb/80 px-4 py-2 rounded-md"
           >
             Login
           </Link>

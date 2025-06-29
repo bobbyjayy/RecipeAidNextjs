@@ -6,6 +6,9 @@ import IngredientInput from "@/components/IngredientInput";
 import MealForm from "@/components/MealForm";
 import MealSuggestion from "@/components/MealSuggestion";
 import { suggestMeal } from "../services/mealService";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"] });
 
 function MealBuilder() {
   const [suggestion, setSuggestion] = useState<Meal>([]);
@@ -77,48 +80,55 @@ function MealBuilder() {
   };
 
   return (
-    <div className="p-4 md:p-8 flex flex-col items-center justify-center">
-      <h1 className="text-2xl font-bold mb-4">Build Your Recipe</h1>
+    <div className="w-full min-h-screen relative p-4 bg-white md:p-8 flex flex-col items-center justify-between">
+      <div className="flex flex-col items-center ">
+        <h1 className={`${montserrat.className} text-4xl font-bold mb-4`}>
+          Build Your Recipe
+        </h1>
 
-      <MealForm
-        cuisine={cuisine}
-        setCuisine={setCuisine}
-        servings={servings}
-        setServings={setServings}
-        mealTime={mealTime}
-        setMealTime={setMealTime}
-      />
+        <MealForm
+          cuisine={cuisine}
+          setCuisine={setCuisine}
+          servings={servings}
+          setServings={setServings}
+          mealTime={mealTime}
+          setMealTime={setMealTime}
+        />
 
-      <IngredientInput
-        ingredients={ingredients}
-        input={input}
-        setInput={setInput}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
-        updateIngredient={updateIngredient}
-        handleKeyDown={handleKeyDown}
-      />
+        <IngredientInput
+          ingredients={ingredients}
+          input={input}
+          setInput={setInput}
+          addIngredient={addIngredient}
+          removeIngredient={removeIngredient}
+          updateIngredient={updateIngredient}
+          handleKeyDown={handleKeyDown}
+        />
 
-      <button
-        onClick={handleSuggestMeal}
-        disabled={loading || rateLimited}
-        className={`mt-4 font-semibold px-4 py-2 rounded ${
-          loading || rateLimited
-            ? "bg-orange-300 cursor-not-allowed"
-            : "bg-orange-500 hover:bg-orange-600 text-white"
-        }`}
-      >
-        Suggest a Meal
-      </button>
-      {loading && !rateLimited && (
-        <div className="animate-pulse mt-4 text-orange-500 font-semibold">
-          Generating meal...
-        </div>
-      )}
+        <button
+          onClick={handleSuggestMeal}
+          disabled={loading || rateLimited}
+          className={`mt-4 font-semibold px-4 py-2 rounded ${
+            loading || rateLimited
+              ? "bg-marigold/20 cursor-not-allowed"
+              : "bg-marigold text-orange-100 hover:bg-marigold/80 "
+          }`}
+        >
+          Suggest a Meal
+        </button>
+        {loading && !rateLimited && (
+          <div className="animate-pulse mt-4 text-orange-500 font-semibold">
+            Generating meal...
+          </div>
+        )}
 
-      {error && <div className="mb-4 text-red-600 font-semibold">{error}</div>}
-
-      <MealSuggestion suggestion={suggestion} />
+        {error && (
+          <div className="mb-4 text-red-600 font-semibold">{error}</div>
+        )}
+      </div>
+      <div>
+        <MealSuggestion suggestion={suggestion} />
+      </div>
     </div>
   );
 }

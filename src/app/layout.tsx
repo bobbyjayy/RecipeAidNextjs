@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ConditionalNavbar from "@/components/ConditionalNavbar";
+import { Inter, Montserrat } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"] });
 
 export const metadata: Metadata = {
   title: "RecipeAid",
@@ -14,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${inter.className}`}>
         <ConditionalNavbar />
         {children}
       </body>
