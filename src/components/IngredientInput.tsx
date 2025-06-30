@@ -31,7 +31,7 @@ export default function IngredientInput({
         />
         <button
           onClick={addIngredient}
-          className="bg-herb hover:bg-herb/80 text-green-50 ml-4 px-4 py-2 rounded"
+          className="bg-gray-200 hover:bg-gray-300 text-gray-800 ml-4 px-4 py-2 rounded"
         >
           Add
         </button>

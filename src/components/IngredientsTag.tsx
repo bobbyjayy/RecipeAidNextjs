@@ -51,7 +51,7 @@ export default function IngredientsTag({
     //   exit={{ opacity: 0, scale: 0.5 }}
     //   className="flex items-center bg-green-100 text-green-800 px-3 py-3 rounded-full mr-2 mb-2"
     // >
-    <div className="flex items-center bg-celeste/30 text-gray-600 px-3 py-3 rounded-full mr-2 mb-2">
+    <div className="flex items-center bg-indigo-100 hover:bg-indigo-200 text-gray-800 px-3 py-3 rounded-full mr-2 mb-2">
       {isEditing ? (
         <input
           ref={inputRef}

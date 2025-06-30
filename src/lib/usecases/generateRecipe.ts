@@ -10,7 +10,7 @@ export async function generateRecipe(
 ): Promise<Meal> {
   const list = ingredients.map((i) => `- ${i}`).join("\n");
   const prompt = `
-You are a chef AI.
+You are a professional chef trained in AI-assisted meal planning.
 Given these ingredients (feel free to assume common pantry items like oil, salt, pepper):
 ${list}
 

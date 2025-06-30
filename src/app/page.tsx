@@ -8,7 +8,7 @@ const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"] });
 
 function Homepage() {
   return (
-    <section className="flex flex-col w-full h-full bg-lionsmane">
+    <section className="flex flex-col w-full h-full bg-gray-50">
       {/* navigation bar */}
       <nav className="w-full flex justify-between items-center  px-6 pt-3 ">
         <div className="m-auto md:mx-0 flex items-center gap-2">
@@ -19,7 +19,7 @@ function Homepage() {
             alt="RecipeAid Logo"
           />
           <div className="text-4xl font-bold">
-            <span className="text-herb">Recipe</span>Aid
+            <span className="text-red-500">Recipe</span>Aid
           </div>
         </div>
         <div className="hidden md:flex gap-6 text-xl font-medium">
@@ -39,13 +39,13 @@ function Homepage() {
           </a> */}
           <Link
             href="/login"
-            className="hover:border-b-2 hover:border-marigold px-5 py-2"
+            className="hover:border-b-2 hover:border-red-500 px-5 py-2"
           >
             Login
           </Link>
           <Link
             href="/register"
-            className="bg-herb hover:bg-herb/80 text-white px-5 py-2 rounded-lg"
+            className="bg-yellow-400 hover:bg-yellow-600 text-gray-800 px-5 py-2 rounded-lg"
           >
             Register
           </Link>
@@ -59,8 +59,8 @@ function Homepage() {
           <h1
             className={`${montserrat.className} text-4xl md:text-5xl font-extrabold text-gray-900 mb-4`}
           >
-            Cook <span className="text-marigold">Smarter</span> with{" "}
-            <span className="text-marigold">AI</span>
+            Cook <span className="text-red-500">Smarter</span> with{" "}
+            <span className="text-red-500">AI</span>
           </h1>
           <p className="text-lg text-gray-800  mb-6">
             Just type what's in your kitchen - we will turn it into a tasty,
@@ -69,7 +69,7 @@ function Homepage() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/mealbuilder"
-              className="bg-herb hover:bg-herb/80 text-white px-6 py-3 rounded-xl text-lg transition"
+              className="bg-yellow-400 hover:bg-yellow-600 text-gray-800 px-6 py-3 rounded-xl text-lg transition"
             >
               Try It Now
             </Link>
@@ -77,7 +77,7 @@ function Homepage() {
               href="https://github.com/bobbyjayy/recipeaidnextjs"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex justify-between items-center gap-2 text-gray-800 px-6 py-3 hover:border-b-2 hover:border-marigold  text-xl transition"
+              className="flex justify-between items-center gap-2 text-gray-800 px-6 py-3 hover:border-b-2 hover:border-red-500  text-xl transition"
             >
               View on Github
               <svg

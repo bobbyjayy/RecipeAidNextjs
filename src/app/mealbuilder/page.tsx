@@ -80,7 +80,7 @@ function MealBuilder() {
   };
 
   return (
-    <div className="w-full min-h-screen relative p-4 bg-white md:p-8 flex flex-col items-center justify-between">
+    <div className="w-full min-h-screen relative p-4 bg-gray-50 md:p-8 flex flex-col items-center justify-between">
       <div className="flex flex-col items-center ">
         <h1 className={`${montserrat.className} text-4xl font-bold mb-4`}>
           Build Your Recipe
@@ -110,8 +110,8 @@ function MealBuilder() {
           disabled={loading || rateLimited}
           className={`mt-4 font-semibold px-4 py-2 rounded ${
             loading || rateLimited
-              ? "bg-marigold/20 cursor-not-allowed"
-              : "bg-marigold text-orange-100 hover:bg-marigold/80 "
+              ? "bg-yellow-500/20 cursor-not-allowed"
+              : "bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-200"
           }`}
         >
           Suggest a Meal
