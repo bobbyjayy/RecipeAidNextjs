@@ -63,8 +63,8 @@ function Homepage() {
             <span className="text-red-500">AI</span>
           </h1>
           <p className="text-lg text-gray-800  mb-6">
-            Just type what's in your kitchen - we will turn it into a tasty,
-            AI-powered meal idea.
+            Just type what&apos;s in your kitchen - we will turn it into a
+            tasty, AI-powered meal idea.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link

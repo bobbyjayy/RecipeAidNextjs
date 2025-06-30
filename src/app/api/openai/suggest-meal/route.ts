@@ -32,7 +32,11 @@ export async function POST(req: NextRequest) {
     );
 
     return NextResponse.json(meal, { status: 200 });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 400 });
+  } catch (e: unknown) {
+    let message = "Unknown error";
+    if (e instanceof Error) {
+      message = e.message;
+    }
+    return NextResponse.json({ error: message }, { status: 400 });
   }
 }

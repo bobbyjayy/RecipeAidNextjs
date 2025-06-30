@@ -22,7 +22,8 @@ export default function Login() {
       // redirect to main page
       router.push("/mealbuilder");
     } catch (err) {
-      setError("Nework error");
+      console.error("Login error:", err);
+      setError("Network error");
     }
   };
 
@@ -76,7 +77,7 @@ export default function Login() {
         </form>
 
         <p className="mt-4 text-center text-sm text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             href="/register"
             className="text-orange-500 hover:underline font-medium"

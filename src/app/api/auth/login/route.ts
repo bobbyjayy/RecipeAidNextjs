@@ -9,7 +9,11 @@ export async function POST(req: NextRequest) {
     const { email, password } = await req.json();
     const token = await loginUser(email, password);
     return NextResponse.json({ token });
-  } catch (e: any) {
-    return NextResponse.json({ error: e.message }, { status: 401 });
+  } catch (e: unknown) {
+    let message = "Unknown error";
+    if (e instanceof Error) {
+      message = e.message;
+    }
+    return NextResponse.json({ error: message }, { status: 401 });
   }
 }

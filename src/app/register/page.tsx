@@ -20,6 +20,7 @@ export default function Register() {
       await register(email, password);
       router.push("/login");
     } catch (err) {
+      console.error("Registration error:", err);
       setError("Registration failed. Please try again.");
     }
   };

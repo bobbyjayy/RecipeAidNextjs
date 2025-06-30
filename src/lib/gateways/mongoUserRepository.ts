@@ -1,10 +1,11 @@
 import UserModel from "@/models/UserModel";
 import { User } from "@/entities/User";
+import { Types } from "mongoose";
 
 export const mongoUserRepository = {
   async findByEmail(email: string): Promise<User | null> {
     const result = await UserModel.findOne({ email }).lean<{
-      _id: any;
+      _id: Types.ObjectId;
       email: string;
       password: string;
     }>();

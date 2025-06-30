@@ -60,13 +60,17 @@ function MealBuilder() {
         mealTime,
       });
       setSuggestion(meal);
-    } catch (err: any) {
+    } catch (err: unknown) {
       let msg = "Failed to get meal suggestion.";
+      let errMsg = "";
+      if (err instanceof Error) {
+        errMsg = err.message;
+      }
       try {
-        const parsed = JSON.parse(err.message);
+        const parsed = JSON.parse(errMsg);
         msg = parsed.error || msg;
       } catch {
-        msg = err.message || msg;
+        msg = errMsg || msg;
       }
 
       if (msg.toLowerCase().includes("log in")) {
