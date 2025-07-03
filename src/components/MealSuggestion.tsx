@@ -5,7 +5,7 @@ export default function MealSuggestion({ suggestion }: { suggestion: Meal }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
       {suggestion.map((course, idx) => (
-        <div key={idx} className="border p-4 rounded shadow bg-yellow-50">
+        <div key={idx} className="border p-4 rounded shadow bg-white">
           <h2 className="text-xl font-bold mb-2">{course.title}</h2>
           <h3 className="font-semibold">Ingredients:</h3>
           {course.ingredients && course.ingredients.length > 0 ? (

@@ -19,8 +19,8 @@ export default function IngredientInput({
   handleKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }) {
   return (
-    <>
-      <div>
+    <div className="w-full flex flex-col items-center gap-4">
+      <div className="flex flex-row">
         <input
           type="text"
           value={input}
@@ -31,7 +31,7 @@ export default function IngredientInput({
         />
         <button
           onClick={addIngredient}
-          className="bg-gray-200 hover:bg-gray-300 text-gray-800 ml-4 px-4 py-2 rounded"
+          className="hidden md:inline bg-gray-200 hover:bg-gray-300 text-gray-800  px-4 py-2 rounded"
         >
           Add
         </button>
@@ -48,6 +48,6 @@ export default function IngredientInput({
         ))}
         {/* </AnimatePresence> */}
       </div>
-    </>
+    </div>
   );
 }

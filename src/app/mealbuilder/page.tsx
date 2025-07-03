@@ -6,9 +6,6 @@ import IngredientInput from "@/components/IngredientInput";
 import MealForm from "@/components/MealForm";
 import MealSuggestion from "@/components/MealSuggestion";
 import { suggestMeal } from "../services/mealService";
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({ subsets: ["latin"], weight: ["600", "700"] });
 
 function MealBuilder() {
   const [suggestion, setSuggestion] = useState<Meal>([]);
@@ -84,53 +81,68 @@ function MealBuilder() {
   };
 
   return (
-    <div className="w-full min-h-screen relative p-4 bg-gray-50 md:p-8 flex flex-col items-center justify-between">
-      <div className="flex flex-col items-center ">
-        <h1 className={`${montserrat.className} text-4xl font-bold mb-4`}>
-          Build Your Recipe
-        </h1>
+    <div className="w-full min-h-screen relative p-4 md:p-8 bg-cream  ">
+      <div className="grid grid-col-6 md:grid-cols-12 flex justify-center items-center  w-full max-w-6xl mx-auto  gap-6">
+        {/* Header */}
+        <div className="col-span-6 md:col-span-12  text-center ">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">
+            What&apos;s in your fridge?
+          </h1>
+          <p className="hidden md:inline text-lg text-gray-600">
+            Enter your ingredients below to generate a delicious recipe
+          </p>
+        </div>
 
-        <MealForm
-          cuisine={cuisine}
-          setCuisine={setCuisine}
-          servings={servings}
-          setServings={setServings}
-          mealTime={mealTime}
-          setMealTime={setMealTime}
-        />
+        <div className="col-span-6 md:col-span-12  w-full ">
+          <IngredientInput
+            ingredients={ingredients}
+            input={input}
+            setInput={setInput}
+            addIngredient={addIngredient}
+            removeIngredient={removeIngredient}
+            updateIngredient={updateIngredient}
+            handleKeyDown={handleKeyDown}
+          />
+        </div>
 
-        <IngredientInput
-          ingredients={ingredients}
-          input={input}
-          setInput={setInput}
-          addIngredient={addIngredient}
-          removeIngredient={removeIngredient}
-          updateIngredient={updateIngredient}
-          handleKeyDown={handleKeyDown}
-        />
+        <div className="col-span-6 md:col-span-12 col-span-6 ">
+          <MealForm
+            cuisine={cuisine}
+            setCuisine={setCuisine}
+            servings={servings}
+            setServings={setServings}
+            mealTime={mealTime}
+            setMealTime={setMealTime}
+          />
+        </div>
 
-        <button
-          onClick={handleSuggestMeal}
-          disabled={loading || rateLimited}
-          className={`mt-4 font-semibold px-4 py-2 rounded ${
-            loading || rateLimited
-              ? "bg-yellow-500/20 cursor-not-allowed"
-              : "bg-yellow-500 text-black hover:bg-yellow-600 transition-colors duration-200"
-          }`}
-        >
-          Suggest a Meal
-        </button>
-        {loading && !rateLimited && (
-          <div className="animate-pulse mt-4 text-orange-500 font-semibold">
-            Generating meal...
-          </div>
-        )}
+        <div className="col-span-6 md:col-span-12  flex justify-center ">
+          <button
+            onClick={handleSuggestMeal}
+            disabled={loading || rateLimited}
+            className={`mt-4 font-semibold px-4 py-2 rounded ${
+              loading || rateLimited
+                ? "bg-orange/20 cursor-not-allowed"
+                : "bg-orange text-white hover:bg-orange/80 transition-colors duration-200"
+            }`}
+          >
+            Create Recipe
+          </button>
+        </div>
 
-        {error && (
-          <div className="mb-4 text-red-600 font-semibold">{error}</div>
-        )}
+        <div className="col-span-6 md:col-span-12 text-center">
+          {loading && !rateLimited && (
+            <div className="animate-pulse mt-4 text-orange-500 font-semibold">
+              Generating meal...
+            </div>
+          )}
+
+          {error && (
+            <div className="mb-4 text-red-600 font-semibold ">{error}</div>
+          )}
+        </div>
       </div>
-      <div>
+      <div className="mt-10">
         <MealSuggestion suggestion={suggestion} />
       </div>
     </div>

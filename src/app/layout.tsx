@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ConditionalNavbar from "@/components/ConditionalNavbar";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppin = Poppins({ subsets: ["latin"], weight: ["600", "700"] });
 
 export const metadata: Metadata = {
   title: "RecipeAid",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${poppin.className}`}>
         <ConditionalNavbar />
         {children}
       </body>

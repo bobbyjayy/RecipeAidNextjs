@@ -26,7 +26,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
+    <div className="bg-cream shadow-md px-6 py-4 flex justify-between items-center">
       <Link href="/" className="flex items-center text-xl font-bold">
         <Image
           src="/recipelogo.png"
@@ -35,7 +35,7 @@ export default function Navbar() {
           alt="recipeaid logo"
           className="w-10 h-10 mr-2"
         />
-        <span className="text-red-500">Recipe</span>Aid
+        RecipeAid
       </Link>
 
       {/* Mobile Menu Button */}
@@ -74,7 +74,7 @@ export default function Navbar() {
         <div className="absolute top-[70px] left-0 w-full flex flex-col items-center gap-4 bg-white py-4 shadow-md sm:hidden z-50 transition-all duration-300">
           <Link
             href="/mealbuilder"
-            className=" text-gray-700 hover:text-red-500"
+            className=" text-gray-700 hover:text-lightyellow"
           >
             Meal Builder
           </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="border border-gray-300 text-gray-800 px-3 py-1 rounded hover:bg-gray-100"
+              className=" text-white bg-orange px-3 py-1 rounded hover:bg-orange/80"
             >
               Login
             </Link>
@@ -98,7 +98,10 @@ export default function Navbar() {
       )}
 
       <div className="hidden sm:flex items-center gap-4">
-        <Link href="/mealbuilder" className=" text-gray-700 hover:text-red-500">
+        <Link
+          href="/mealbuilder"
+          className=" text-gray-700 hover:border-b-2 hover:border-lightyellow"
+        >
           Meal Builder
         </Link>
 
@@ -112,7 +115,7 @@ export default function Navbar() {
         ) : (
           <Link
             href="/login"
-            className="border border-gray-300 text-gray-800 px-3 py-1 rounded hover:bg-gray-100"
+            className="bg-orange text-white px-3 py-1 rounded hover:bg-orange/80"
           >
             Login
           </Link>
