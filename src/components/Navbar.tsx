@@ -102,7 +102,7 @@ export default function Navbar() {
           href="/mealbuilder"
           className=" text-gray-700 hover:border-b-2 hover:border-lightyellow"
         >
-          Meal Builder
+          Get Recipes
         </Link>
 
         {isLoggedIn ? (

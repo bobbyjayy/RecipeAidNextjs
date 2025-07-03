@@ -26,7 +26,9 @@ export default function MealForm({
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 w-full max-w-lg mx-auto flex">
       <div>
-        <label className="block mb-1 font-medium text-gray-800">Cuisine</label>
+        <label className="block mb-1 font-medium text-gray-800">
+          Cuisine Style
+        </label>
         <select
           value={cuisine}
           onChange={(e) => setCuisine(e.target.value)}
@@ -40,7 +42,9 @@ export default function MealForm({
         </select>
       </div>
       <div>
-        <label className="block mb-1 font-medium text-gray-800">Servings</label>
+        <label className="block mb-1 font-medium text-gray-800">
+          How many people?
+        </label>
         <input
           type="number"
           min={1}

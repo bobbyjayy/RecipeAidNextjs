@@ -82,7 +82,7 @@ export default function Login() {
             href="/register"
             className="text-orange-500 hover:underline font-medium"
           >
-            Register
+            Sign Up
           </Link>
         </p>
       </div>
